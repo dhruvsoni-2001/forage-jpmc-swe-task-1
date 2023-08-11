@@ -23,7 +23,7 @@ import random
 import urllib.request
 
 # Server API URLs
-QUERY = "http://localhost:8080/query?id={}"
+QUERY = "http://localhost:8080/quer y?id={}"
 
 # 500 server request
 N = 500
@@ -35,8 +35,8 @@ def getDataPoint(quote):
     stock = quote['stock']
     bid_price = float(quote['top_bid']['price'])
     ask_price = float(quote['top_ask']['price'])
-    price = (bid_price/ask_price)/2
-    return stock, bid_price, ask_price, price
+    price = (bid_price + ask_price)/2
+	return stock, bid_price, ask_price, price
 
 
 def getRatio(price_a, price_b):
